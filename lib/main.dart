@@ -57,7 +57,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   bool isOn = false;
-
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -68,9 +67,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(widget.title),
+        toolbarHeight: 100.0,
+        backgroundColor:
+            widget.isDarkModeEnabled ? Colors.black12 : Colors.white,
+        elevation: 0.0,
         actions: [
-          Switch(
-              value: widget.isDarkModeEnabled, onChanged: widget.themeChangeCb)
+          Transform.scale(
+            scale: 1.5,
+            child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Switch(
+                  value: widget.isDarkModeEnabled,
+                  activeColor: Colors.white,
+                  activeTrackColor: Colors.white,
+                  inactiveThumbImage: const NetworkImage(
+                      "https://cdn2.iconfinder.com/data/icons/bubble-set-general/48/Sun-512.png"),
+                  activeThumbImage: const NetworkImage(
+                      "https://cdn2.iconfinder.com/data/icons/canoopi-mobile-contact-apps/32/Dark_Theme-512.png"),
+                  onChanged: widget.themeChangeCb),
+            ),
+          )
         ],
       ),
       body: Center(
