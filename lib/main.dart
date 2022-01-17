@@ -1,29 +1,54 @@
+import 'package:dayaonweb/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PortfolioApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PortfolioApp extends StatefulWidget {
+  const PortfolioApp({Key? key}) : super(key: key);
+
+  @override
+  _PortfolioAppState createState() => _PortfolioAppState();
+}
+
+class _PortfolioAppState extends State<PortfolioApp> {
+  bool _isDarkModeEnabled = false;
+
+  void _onSwitchToggle(bool isToggled) {
+    setState(() {
+      print("Called with value:$isToggled");
+      _isDarkModeEnabled = isToggled;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      // darkTheme: ThemeData.dark(),
-      theme: ThemeData(
-        primarySwatch: Colors.green,
+      theme: !_isDarkModeEnabled ? lightTheme : darkTheme,
+      darkTheme: darkTheme,
+      home: MyHomePage(
+        title: 'Daya on web',
+        isDarkModeEnabled: _isDarkModeEnabled,
+        themeChangeCb: _onSwitchToggle,
       ),
-      home: const MyHomePage(title: 'Daya on web'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  MyHomePage(
+      {Key? key,
+      required this.title,
+      required this.isDarkModeEnabled,
+      required this.themeChangeCb})
+      : super(key: key);
 
   final String title;
+  final ValueChanged<bool> themeChangeCb;
+  final bool isDarkModeEnabled;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -31,17 +56,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  bool _isDarkModeEnabled = false;
+  bool isOn = false;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
-    });
-  }
-
-  void _onSwitchToggle(bool isToggled) {
-    setState(() {
-      _isDarkModeEnabled = isToggled;
     });
   }
 
@@ -50,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Switch(value: _isDarkModeEnabled, onChanged: _onSwitchToggle)
+          Switch(
+              value: widget.isDarkModeEnabled, onChanged: widget.themeChangeCb)
         ],
       ),
       body: Center(
