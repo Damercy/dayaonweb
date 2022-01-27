@@ -56,25 +56,40 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  double determineWidth() {
+    var viewportWidth = MediaQuery.of(context).size.width;
+    if (viewportWidth > 1024) {
+      return 300.0;
+    } else {
+      return 0;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              splashRadius: 20.0,
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            );
-          },
-        ),
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
+            SizedBox(
+              width: determineWidth(),
+            ),
+            Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  splashRadius: 20.0,
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  tooltip:
+                      MaterialLocalizations.of(context).openAppDrawerTooltip,
+                );
+              },
+            ),
+            const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             const CircleAvatar(
               backgroundImage: NetworkImage(
                   "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
@@ -96,11 +111,15 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(
                 widget.isDarkModeEnabled ? Icons.light_mode : Icons.dark_mode),
           ),
+          SizedBox(
+            width: determineWidth(),
+          )
         ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
               height:
