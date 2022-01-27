@@ -66,28 +66,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(),
       appBar: AppBar(
-        title: Text(widget.title),
-        toolbarHeight: 100.0,
-        backgroundColor:
-            widget.isDarkModeEnabled ? Colors.black12 : Colors.white,
+        title: Row(
+          children: [
+            const CircleAvatar(
+              backgroundImage: NetworkImage(
+                  "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
+            ),
+            const Padding(padding: EdgeInsets.fromLTRB(0, 0, 30, 0)),
+            Text(widget.title)
+          ],
+        ),
+        backgroundColor: Colors.green,
         elevation: 0.0,
         actions: [
-          Transform.scale(
-            scale: 1.5,
-            child: Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Switch(
-                  value: widget.isDarkModeEnabled,
-                  activeColor: Colors.white,
-                  activeTrackColor: Colors.white,
-                  inactiveThumbImage: const NetworkImage(
-                      "https://cdn2.iconfinder.com/data/icons/bubble-set-general/48/Sun-512.png"),
-                  activeThumbImage: const NetworkImage(
-                      "https://cdn2.iconfinder.com/data/icons/canoopi-mobile-contact-apps/32/Dark_Theme-512.png"),
-                  onChanged: widget.themeChangeCb),
-            ),
-          )
+          Switch(
+              value: widget.isDarkModeEnabled,
+              activeColor: Colors.white,
+              activeTrackColor: Colors.white,
+              inactiveThumbImage: const NetworkImage(
+                  "https://cdn2.iconfinder.com/data/icons/bubble-set-general/48/Sun-512.png"),
+              activeThumbImage: const NetworkImage(
+                  "https://cdn2.iconfinder.com/data/icons/canoopi-mobile-contact-apps/32/Dark_Theme-512.png"),
+              onChanged: widget.themeChangeCb),
         ],
       ),
       body: Center(
