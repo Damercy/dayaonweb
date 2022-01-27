@@ -1,5 +1,6 @@
 import 'package:dayaonweb/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -15,10 +16,9 @@ class PortfolioApp extends StatefulWidget {
 class _PortfolioAppState extends State<PortfolioApp> {
   bool _isDarkModeEnabled = false;
 
-  void _onSwitchToggle(bool isToggled) {
+  void _onSwitchToggle() {
     setState(() {
-      print("Called with value:$isToggled");
-      _isDarkModeEnabled = isToggled;
+      _isDarkModeEnabled = !_isDarkModeEnabled;
     });
   }
 
@@ -30,7 +30,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
       theme: !_isDarkModeEnabled ? lightTheme : darkTheme,
       darkTheme: darkTheme,
       home: MyHomePage(
-        title: 'Daya on web',
+        title: 'Dayamoy Adhikari',
         isDarkModeEnabled: _isDarkModeEnabled,
         themeChangeCb: _onSwitchToggle,
       ),
@@ -47,7 +47,7 @@ class MyHomePage extends StatefulWidget {
       : super(key: key);
 
   final String title;
-  final ValueChanged<bool> themeChangeCb;
+  final VoidCallback themeChangeCb;
   final bool isDarkModeEnabled;
 
   @override
@@ -75,21 +75,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 30, 0)),
-            Text(widget.title)
+            Text(
+              widget.title,
+              style: GoogleFonts.rubik(fontWeight: FontWeight.w400),
+            )
           ],
         ),
         backgroundColor: Colors.green,
+        titleSpacing: 0.0,
         elevation: 0.0,
         actions: [
-          Switch(
-              value: widget.isDarkModeEnabled,
-              activeColor: Colors.white,
-              activeTrackColor: Colors.white,
-              inactiveThumbImage: const NetworkImage(
-                  "https://cdn2.iconfinder.com/data/icons/bubble-set-general/48/Sun-512.png"),
-              activeThumbImage: const NetworkImage(
-                  "https://cdn2.iconfinder.com/data/icons/canoopi-mobile-contact-apps/32/Dark_Theme-512.png"),
-              onChanged: widget.themeChangeCb),
+          IconButton(
+            onPressed: widget.themeChangeCb,
+            icon: Icon(
+                widget.isDarkModeEnabled ? Icons.light_mode : Icons.dark_mode),
+          )
         ],
       ),
       body: Center(
