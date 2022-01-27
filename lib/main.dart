@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundImage: NetworkImage(
                   "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
             ),
-            const Padding(padding: EdgeInsets.fromLTRB(0, 0, 30, 0)),
+            const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             Text(
               widget.title,
               style: GoogleFonts.rubik(fontWeight: FontWeight.w400),
@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: widget.themeChangeCb,
             icon: Icon(
                 widget.isDarkModeEnabled ? Icons.light_mode : Icons.dark_mode),
-          )
+          ),
         ],
       ),
       body: Center(
