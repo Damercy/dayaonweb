@@ -1,3 +1,4 @@
+import 'package:dayaonweb/pages/BodyTop.dart';
 import 'package:dayaonweb/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +26,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Dayamoy Adhikari - Android developer',
       debugShowCheckedModeBanner: false,
       theme: !_isDarkModeEnabled ? lightTheme : darkTheme,
       darkTheme: darkTheme,
@@ -39,7 +40,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage(
+  const MyHomePage(
       {Key? key,
       required this.title,
       required this.isDarkModeEnabled,
@@ -55,19 +56,23 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  bool isOn = false;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const Drawer(),
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              splashRadius: 20.0,
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
         title: Row(
           children: [
             const CircleAvatar(
@@ -86,6 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0.0,
         actions: [
           IconButton(
+            splashRadius: 20.0,
             onPressed: widget.themeChangeCb,
             icon: Icon(
                 widget.isDarkModeEnabled ? Icons.light_mode : Icons.dark_mode),
@@ -94,22 +100,29 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            SizedBox(
+              height:
+                  (MediaQuery.of(context).size.height - kToolbarHeight - 200) /
+                      3,
+              child: Container(
+                color: Colors.amber,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            const BodyTop(
+              key: null,
+            ),
+            SizedBox(
+              height:
+                  (MediaQuery.of(context).size.height - kToolbarHeight - 30) /
+                      3,
+              child: Container(
+                color: Colors.amber,
+              ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
