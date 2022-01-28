@@ -108,32 +108,37 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: Center(
-        //  (MediaQuery.of(context).size.height - kToolbarHeight - 200) / 3
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-                height: (MediaQuery.of(context).size.height -
-                        kToolbarHeight -
-                        400) /
-                    3),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(ScreenSize.determineWidth(context),
-                    0, ScreenSize.determineWidth(context), 0),
-                child: const BodyTop(
-                  key: null,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                  height: (MediaQuery.of(context).size.height -
+                          kToolbarHeight -
+                          400) /
+                      3),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                      ScreenSize.determineWidth(context),
+                      0,
+                      ScreenSize.determineWidth(context),
+                      0),
+                  child: const BodyTop(
+                    key: null,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(
-              height:
-                  (MediaQuery.of(context).size.height - kToolbarHeight - 30) /
-                      3,
-            ),
-          ],
+              SizedBox(
+                height:
+                    (MediaQuery.of(context).size.height - kToolbarHeight - 30) /
+                        3,
+              ),
+            ],
+          ),
         ),
       ),
     );

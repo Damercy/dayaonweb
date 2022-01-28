@@ -4,8 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     textTheme: Typography().white.apply(
-          fontFamily: GoogleFonts.rubik().fontFamily,
-        ),
+        fontFamily: GoogleFonts.rubik().fontFamily, displayColor: Colors.white),
     primaryColor: Colors.green,
     scaffoldBackgroundColor: const Color(0xFF201A19),
     splashFactory: InkRipple.splashFactory,
