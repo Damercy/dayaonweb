@@ -115,13 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(
-              height:
-                  (MediaQuery.of(context).size.height - kToolbarHeight - 400) /
-                      3,
-              child: Container(
-                color: Colors.amber,
-              ),
-            ),
+                height: (MediaQuery.of(context).size.height -
+                        kToolbarHeight -
+                        400) /
+                    3),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(ScreenSize.determineWidth(context),
@@ -135,9 +132,6 @@ class _MyHomePageState extends State<MyHomePage> {
               height:
                   (MediaQuery.of(context).size.height - kToolbarHeight - 30) /
                       3,
-              child: Container(
-                color: Colors.amber,
-              ),
             ),
           ],
         ),

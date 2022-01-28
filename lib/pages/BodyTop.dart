@@ -7,20 +7,20 @@ class BodyTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Flex(
-        direction: ScreenSize.isLargeScreenDevice(context)
-            ? Axis.horizontal
-            : Axis.vertical,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const IntroBodyTop(),
-          ClipOval(
-              child: Image.network(
-                  "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg")),
-        ],
-      ),
+    return Flex(
+      direction: ScreenSize.isLargeScreenDevice(context)
+          ? Axis.horizontal
+          : Axis.vertical,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const IntroBodyTop(),
+        ClipRRect(
+            borderRadius:
+                const BorderRadius.all(Radius.elliptical(120.0, 120.0)),
+            child: Image.network(
+              "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg",
+            )),
+      ],
     );
   }
 }
