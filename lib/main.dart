@@ -1,5 +1,6 @@
 import 'package:dayaonweb/pages/BodyTop.dart';
 import 'package:dayaonweb/theme/theme.dart';
+import 'package:dayaonweb/utils/ScreenSize.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -56,15 +57,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  double determineWidth() {
-    var viewportWidth = MediaQuery.of(context).size.width;
-    if (viewportWidth > 1024) {
-      return 300.0;
-    } else {
-      return 0;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Row(
           children: [
             SizedBox(
-              width: determineWidth(),
+              width: ScreenSize.determineWidth(context),
             ),
             Builder(
               builder: (BuildContext context) {
@@ -112,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 widget.isDarkModeEnabled ? Icons.light_mode : Icons.dark_mode),
           ),
           SizedBox(
-            width: determineWidth(),
+            width: ScreenSize.determineWidth(context),
           )
         ],
       ),
@@ -124,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             SizedBox(
               height:
-                  (MediaQuery.of(context).size.height - kToolbarHeight - 200) /
+                  (MediaQuery.of(context).size.height - kToolbarHeight - 400) /
                       3,
               child: Container(
                 color: Colors.amber,
@@ -132,8 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(
-                    determineWidth(), 0, determineWidth(), 0),
+                padding: EdgeInsets.fromLTRB(ScreenSize.determineWidth(context),
+                    0, ScreenSize.determineWidth(context), 0),
                 child: const BodyTop(
                   key: null,
                 ),

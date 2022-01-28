@@ -1,3 +1,5 @@
+import 'package:dayaonweb/pages/IntroBodyTop.dart';
+import 'package:dayaonweb/utils/ScreenSize.dart';
 import 'package:flutter/material.dart';
 
 class BodyTop extends StatelessWidget {
@@ -7,22 +9,16 @@ class BodyTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Flex(
+        direction: ScreenSize.isLargeScreenDevice(context)
+            ? Axis.horizontal
+            : Axis.vertical,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            "Android Developer",
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          Text(
-            "Android Developer 2",
-            style: Theme.of(context).textTheme.headline2,
-          ),
-          Text(
-            "Android Developer 3",
-            style: Theme.of(context).textTheme.headline2,
-          )
+          const IntroBodyTop(),
+          ClipOval(
+              child: Image.network(
+                  "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg")),
         ],
       ),
     );
