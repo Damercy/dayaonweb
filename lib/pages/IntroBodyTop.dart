@@ -9,7 +9,7 @@ class IntroBodyTop extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Android Developer",
+          "Android Engineer",
           style: Theme.of(context).textTheme.headline2,
         ),
         const SizedBox(
@@ -22,7 +22,29 @@ class IntroBodyTop extends StatelessWidget {
                 fontWeight: FontWeight.w900, height: 1.5, letterSpacing: 0.5),
             softWrap: true,
           ),
-        )
+        ),
+        const SizedBox(
+          height: 32,
+        ),
+        Flexible(
+          child: Text(
+            "I've been part of the core team at Microfinance.ai where I ideated, designed & developed the app that helped raise pre-seed amount of \$200k.",
+            style: Theme.of(context).textTheme.headline6?.copyWith(
+                fontWeight: FontWeight.w900, height: 1.5, letterSpacing: 0.5),
+            softWrap: true,
+          ),
+        ),
+        const SizedBox(
+          height: 32,
+        ),
+        Flexible(
+          child: Text(
+            "You can connect with me on Twitter or LinkedIn.",
+            style: Theme.of(context).textTheme.headline6?.copyWith(
+                fontWeight: FontWeight.w900, height: 1.5, letterSpacing: 0.5),
+            softWrap: true,
+          ),
+        ),
       ],
     );
   }
