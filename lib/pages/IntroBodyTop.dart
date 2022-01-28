@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class IntroBodyTop extends StatelessWidget {
@@ -124,6 +125,49 @@ class IntroBodyTop extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(
+          height: 32,
+        ),
+        ElevatedButton.icon(
+            icon: const Icon(Icons.download_rounded),
+            style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
+                padding: MaterialStateProperty.all(const EdgeInsets.all(24.0)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)))),
+                splashFactory: InkSplash.splashFactory),
+            onPressed: () async {
+              await launch(
+                  "https://drive.google.com/file/d/1ahZ4pxjXDqXIiN8gMSxFbVGV7oc3-4yi/view?usp=sharing");
+            },
+            label: Text("DOWNLOAD RESUME",
+                style: Theme.of(context).textTheme.button?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    height: 1.5,
+                    color: Colors.white,
+                    letterSpacing: 1.0))),
+        const SizedBox(
+          height: 24,
+        ),
+        ElevatedButton.icon(
+            icon: const FaIcon(FontAwesomeIcons.github),
+            style: ButtonStyle(
+                elevation: MaterialStateProperty.all(0),
+                padding: MaterialStateProperty.all(const EdgeInsets.all(24.0)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)))),
+                splashFactory: InkSplash.splashFactory),
+            onPressed: () async {
+              await launch("https://www.github.com/Damercy");
+            },
+            label: Text("FOLLOW ON GITHUB",
+                style: Theme.of(context).textTheme.button?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    height: 1.5,
+                    color: Colors.white,
+                    letterSpacing: 1.0)))
       ],
     );
   }
