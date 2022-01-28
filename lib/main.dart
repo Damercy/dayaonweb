@@ -117,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Center(
+        //  (MediaQuery.of(context).size.height - kToolbarHeight - 200) / 3
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,8 +130,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.amber,
               ),
             ),
-            const BodyTop(
-              key: null,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(
+                    determineWidth(), 0, determineWidth(), 0),
+                child: const BodyTop(
+                  key: null,
+                ),
+              ),
             ),
             SizedBox(
               height:

@@ -5,15 +5,26 @@ class BodyTop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Android Developer",
-          style: Theme.of(context).textTheme.headline2,
-        )
-      ],
+    return Container(
+      color: Colors.blue,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Android Developer",
+            style: Theme.of(context).textTheme.headline2,
+          ),
+          Text(
+            "Android Developer 2",
+            style: Theme.of(context).textTheme.headline2,
+          ),
+          Text(
+            "Android Developer 3",
+            style: Theme.of(context).textTheme.headline2,
+          )
+        ],
+      ),
     );
   }
 }
