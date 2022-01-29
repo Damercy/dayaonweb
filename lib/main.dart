@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (BuildContext context) {
                 return IconButton(
                   splashRadius: 20.0,
-                  icon: const Icon(Icons.menu),
+                  icon: const Icon(Icons.menu, color: Colors.white),
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
                   },
@@ -89,7 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             Text(
               widget.title,
-              style: GoogleFonts.rubik(fontWeight: FontWeight.w400),
+              style: GoogleFonts.rubik(
+                  fontWeight: FontWeight.w400, color: Colors.white),
             )
           ],
         ),
