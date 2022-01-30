@@ -9,41 +9,49 @@ class BodyBottomGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return StaggeredGrid.count(
       crossAxisCount: 3,
+      crossAxisSpacing: 16,
       children: [
         StaggeredGridTile.fit(
           crossAxisCellCount: 1,
           child: GridItem(
               imageUrl:
-                  "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg",
-              text: "Learning how to sail"),
+                  "assets/images/fishing_03.jpg",
+              text: "Fishing in the past time"),
         ),
         StaggeredGridTile.fit(
           crossAxisCellCount: 1,
           child: GridItem(
               imageUrl:
-              "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg",
-              text: "Learning how to sail"),
+              "assets/images/cooking.jpg",
+              text: "Let's cook some chicken"),
         ),
         StaggeredGridTile.fit(
           crossAxisCellCount: 1,
           child: GridItem(
               imageUrl:
-              "https://yasmineevjen.com/wp-content/uploads/2021/01/PXL_20201219_220314155.MP_2-768x1024.jpg",
-              text: "Learning how to sail"),
+              "assets/images/gpu.jpg",
+              text: "Holding a Nvidia GT 610 GPU - my first proper GPU"),
         ),
         StaggeredGridTile.fit(
           crossAxisCellCount: 1,
           child: GridItem(
               imageUrl:
-              "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg",
-              text: "Learning how to sail"),
+              "assets/images/hair_02.jpg",
+              text: "I like long hair"),
         ),
         StaggeredGridTile.fit(
           crossAxisCellCount: 1,
           child: GridItem(
               imageUrl:
-              "https://yasmineevjen.com/wp-content/uploads/2021/11/surfskate2-3.gif",
-              text: "Learning how to sail"),
+              "assets/images/hair_01.jpg",
+              text: "I really, really like long hair"),
+        ),
+        StaggeredGridTile.fit(
+          crossAxisCellCount: 1,
+          child: GridItem(
+              imageUrl:
+              "assets/images/quoter_01.webp",
+              text: "Quotes app I built"),
         ),
       ],
     );

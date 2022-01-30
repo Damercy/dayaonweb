@@ -12,7 +12,7 @@ class GridItem extends StatelessWidget {
       children: [
         ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: Image.network(imageUrl)),
+            child: Image.asset(imageUrl)),
         const SizedBox(height: 10),
         Text(text, style: Theme.of(context).textTheme.bodyText1)
       ],
