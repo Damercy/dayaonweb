@@ -8,14 +8,14 @@ class GridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          Image.network(imageUrl),
-          const SizedBox(height: 10),
-          Text(text, style: Theme.of(context).textTheme.bodyText1)
-        ],
-      ),
+    return Column(
+      children: [
+        ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.network(imageUrl)),
+        const SizedBox(height: 10),
+        Text(text, style: Theme.of(context).textTheme.bodyText1)
+      ],
     );
   }
 }
