@@ -1,7 +1,10 @@
-import 'package:dayaonweb/pages/BodyTop.dart';
+import 'package:dayaonweb/sections/BodyBottomGrid.dart';
+import 'package:dayaonweb/sections/BodyTop.dart';
 import 'package:dayaonweb/theme/theme.dart';
 import 'package:dayaonweb/utils/ScreenSize.dart';
+import 'package:dayaonweb/widgets/GridItem.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -109,9 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: MediaQuery.of(context).size.height,
+      body: CustomScrollView(slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,18 +124,25 @@ class _MyHomePageState extends State<MyHomePage> {
                           kToolbarHeight -
                           400) /
                       3),
-              Expanded(
-                child: Padding(
+              Padding(
+                padding: EdgeInsets.fromLTRB(ScreenSize.determineWidth(context),
+                    0, ScreenSize.determineWidth(context), 0),
+                child: const BodyTop(
+                  key: null,
+                ),
+              ),
+              Padding(
                   padding: EdgeInsets.fromLTRB(
                       ScreenSize.determineWidth(context),
                       0,
                       ScreenSize.determineWidth(context),
                       0),
-                  child: const BodyTop(
-                    key: null,
-                  ),
-                ),
-              ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    margin: EdgeInsets.fromLTRB(0,
+                        (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
+                    child: BodyBottomGrid(),
+                  )),
               SizedBox(
                 height:
                     (MediaQuery.of(context).size.height - kToolbarHeight - 30) /
@@ -141,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      ),
+      ]),
     );
   }
 }
