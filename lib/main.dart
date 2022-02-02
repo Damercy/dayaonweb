@@ -7,6 +7,7 @@ import 'package:dayaonweb/widgets/GridItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -85,7 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
-            const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
+            Padding(
+                padding: EdgeInsets.fromLTRB(
+                    0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
             const CircleAvatar(
               backgroundImage: NetworkImage(
                   "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
@@ -126,17 +129,28 @@ class _MyHomePageState extends State<MyHomePage> {
                           400) /
                       3),
               Padding(
-                padding: EdgeInsets.fromLTRB(ScreenSize.determineWidth(context),
-                    0, ScreenSize.determineWidth(context), 0),
+                padding: EdgeInsets.fromLTRB(
+                    !ScreenSize.isLargeScreenDevice(context)
+                        ? 8
+                        : ScreenSize.determineWidth(context),
+                    0,
+                    !ScreenSize.isLargeScreenDevice(context)
+                        ? 8
+                        : ScreenSize.determineWidth(context),
+                    0),
                 child: const BodyTop(
                   key: null,
                 ),
               ),
               Padding(
                   padding: EdgeInsets.fromLTRB(
-                      ScreenSize.determineWidth(context),
+                      !ScreenSize.isLargeScreenDevice(context)
+                          ? 32
+                          : ScreenSize.determineWidth(context),
                       0,
-                      ScreenSize.determineWidth(context),
+                      !ScreenSize.isLargeScreenDevice(context)
+                          ? 32
+                          : ScreenSize.determineWidth(context),
                       0),
                   child: Container(
                     height: ScreenSize.isLargeScreenDevice(context)
@@ -146,11 +160,24 @@ class _MyHomePageState extends State<MyHomePage> {
                         (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
                     child: const BodyBottomGrid(),
                   )),
-              SizedBox(
-                height:
-                    (MediaQuery.of(context).size.height - kToolbarHeight - 30) /
-                        3,
-              ),
+              Center(
+                  child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 24),
+                child: TextButton.icon(
+                  icon: const Icon(Icons.flutter_dash_rounded),
+                  style:
+                      const ButtonStyle(splashFactory: InkSplash.splashFactory),
+                  onPressed: () async {
+                    await launch("https://github.com/Damercy/dayaonweb");
+                  },
+                  label: Text("MADE WITH FLUTTER",
+                      style: Theme.of(context).textTheme.button?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.green,
+                          height: 1.5,
+                          letterSpacing: 1.0)),
+                ),
+              )),
             ],
           ),
         ),

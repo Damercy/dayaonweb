@@ -12,11 +12,21 @@ class BodyTop extends StatelessWidget {
       direction: ScreenSize.isLargeScreenDevice(context)
           ? Axis.horizontal
           : Axis.vertical,
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Flexible(child: IntroBodyTop()),
+        Flexible(
+            child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: ScreenSize.isLargeScreenDevice(context) ? 0 : 8),
+          child: const IntroBodyTop(),
+        )),
         Padding(
-          padding: const EdgeInsets.fromLTRB(32, 0, 0, 0),
+          padding: EdgeInsets.fromLTRB(
+              ScreenSize.isLargeScreenDevice(context) ? 32 : 0,
+              ScreenSize.isLargeScreenDevice(context) ? 0 : 48,
+              0,
+              0),
           child: ClipRRect(
               borderRadius:
                   const BorderRadius.all(Radius.elliptical(120.0, 120.0)),
