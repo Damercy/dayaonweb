@@ -30,8 +30,8 @@ class BodyTop extends StatelessWidget {
           child: ClipRRect(
               borderRadius:
                   const BorderRadius.all(Radius.elliptical(120.0, 120.0)),
-              child: Image.network(
-                "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg",
+              child: Image.asset(
+                "assets/images/dp.jpg",
               )),
         ),
         const SizedBox(

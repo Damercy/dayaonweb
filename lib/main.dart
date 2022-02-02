@@ -32,7 +32,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Dayamoy Adhikari - Android developer',
+      title: 'Dayamoy Adhikari - Android engineer',
       debugShowCheckedModeBanner: false,
       theme: !_isDarkModeEnabled ? lightTheme : darkTheme,
       darkTheme: darkTheme,
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
             const CircleAvatar(
               backgroundImage: NetworkImage(
-                  "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
+                  "assets/images/dp.jpg"),
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             AutoSizeText(
