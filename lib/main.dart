@@ -139,8 +139,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       0),
                   child: Container(
                     height: ScreenSize.isLargeScreenDevice(context)
-                        ? MediaQuery.of(context).size.height + 800
-                        : MediaQuery.of(context).size.height + 200,
+                        ? MediaQuery.of(context).size.height + 1200
+                        : MediaQuery.of(context).size.height + 800,
                     margin: EdgeInsets.fromLTRB(0,
                         (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
                     child: const BodyBottomGrid(),

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class GridItem extends StatelessWidget {
@@ -14,8 +16,13 @@ class GridItem extends StatelessWidget {
         ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(imageUrl)),
-        const SizedBox(height: 10),
-        Text(text, style: Theme.of(context).textTheme.subtitle1)
+        const SizedBox(height: 8),
+        Text(text,
+            style: Theme.of(context)
+                .textTheme
+                .subtitle1
+                ?.merge(const TextStyle(fontWeight: FontWeight.w600))),
+        const SizedBox(height: 8),
       ],
     );
   }
