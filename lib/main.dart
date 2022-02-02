@@ -138,10 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       ScreenSize.determineWidth(context),
                       0),
                   child: Container(
-                    height: MediaQuery.of(context).size.height,
+                    height: ScreenSize.isLargeScreenDevice(context)
+                        ? MediaQuery.of(context).size.height + 800
+                        : MediaQuery.of(context).size.height + 200,
                     margin: EdgeInsets.fromLTRB(0,
                         (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
-                    child: BodyBottomGrid(),
+                    child: const BodyBottomGrid(),
                   )),
               SizedBox(
                 height:
