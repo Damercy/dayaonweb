@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class GridItem extends StatelessWidget {
@@ -17,7 +18,7 @@ class GridItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(imageUrl)),
         const SizedBox(height: 8),
-        Text(text,
+        AutoSizeText(text,
             style: Theme.of(context)
                 .textTheme
                 .subtitle1

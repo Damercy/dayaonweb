@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dayaonweb/sections/BodyBottomGrid.dart';
 import 'package:dayaonweb/sections/BodyTop.dart';
 import 'package:dayaonweb/theme/theme.dart';
@@ -90,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   "https://pbs.twimg.com/profile_images/1463595775477256193/suTiiJ3b_400x400.jpg"),
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
-            Text(
+            AutoSizeText(
               widget.title,
               style: GoogleFonts.rubik(
                   fontWeight: FontWeight.w400, color: Colors.white),
