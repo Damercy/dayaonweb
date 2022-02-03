@@ -90,8 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.fromLTRB(
                     0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
             const CircleAvatar(
-              backgroundImage: NetworkImage(
-                  "assets/images/dp.jpg"),
+              backgroundImage: AssetImage("assets/images/dp.jpg"),
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             AutoSizeText(
