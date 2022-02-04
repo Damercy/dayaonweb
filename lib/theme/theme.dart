@@ -8,6 +8,7 @@ ThemeData darkTheme = ThemeData(
     primaryColor: Colors.green,
     scaffoldBackgroundColor: const Color(0xFF201A19),
     splashFactory: InkRipple.splashFactory,
+    drawerTheme:  const DrawerThemeData(backgroundColor: Color(0xFF201A19)),
     primarySwatch: Colors.green);
 
 ThemeData lightTheme = ThemeData(
@@ -19,6 +20,5 @@ ThemeData lightTheme = ThemeData(
         displayColor: const Color(0xFF442C2E)),
     scaffoldBackgroundColor: const Color(0xFFFFF1EE),
     splashFactory: InkRipple.splashFactory,
+    drawerTheme:  const DrawerThemeData(backgroundColor: Color(0xFFFFF1EE)),
     primarySwatch: Colors.green);
-
-// #442c2e

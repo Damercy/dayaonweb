@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dayaonweb/sections/BodyBottomGrid.dart';
 import 'package:dayaonweb/sections/BodyTop.dart';
+import 'package:dayaonweb/sections/DrawerColumn.dart';
 import 'package:dayaonweb/theme/theme.dart';
 import 'package:dayaonweb/utils/ScreenSize.dart';
 import 'package:dayaonweb/widgets/GridItem.dart';
@@ -65,7 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const Drawer(
+        child: DrawerColumn(),
+      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Row(
