@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
       GridItemModel("🍳 Let's cook some chicken",
           Image.asset("assets/images/cooking.jpg")),
       GridItemModel("🔢 Built a customizable keyboard library",
-          Image.asset("assets/images/slash_keyboard.gif")),
+          Image.asset("assets/images/slash_keyboard.png")),
       GridItemModel(
           "💇 I like long hair", Image.asset("assets/images/hair_02.jpg")),
       GridItemModel("🖥️ Holding a Nvidia GT 610 - my first proper GPU",
