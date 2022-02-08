@@ -1,6 +1,5 @@
 import 'package:dayaonweb/sections/IntroBodyTop.dart';
 import 'package:dayaonweb/utils/ScreenSize.dart';
-import 'package:dayaonweb/widgets/GridItem.dart';
 import 'package:flutter/material.dart';
 
 class BodyTop extends StatelessWidget {
