@@ -160,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         : MediaQuery.of(context).size.height + 800,
                     margin: EdgeInsets.fromLTRB(0,
                         (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
-                    child: const BodyBottomGrid(),
+                    child: BodyBottomGrid(),
                   )),
               Center(
                   child: Padding(
