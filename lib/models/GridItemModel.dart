@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
+
 class GridItemModel {
-  final String image;
+  final Image image;
   final String text;
 
   GridItemModel(this.text, this.image);

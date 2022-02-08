@@ -10,6 +10,8 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'models/GridItemModel.dart';
+
 void main() {
   runApp(const PortfolioApp());
 }
@@ -63,6 +65,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late final List<GridItemModel> _gridItems;
+
+  @override
+  void initState() {
+    super.initState();
+    _gridItems = [
+      GridItemModel("📱 Minimalist quotes app side project",
+          Image.asset("assets/images/quoter.webp")),
+      GridItemModel("🎣 Fishing in the past time",
+          Image.asset("assets/images/fishing_03.jpg")),
+      GridItemModel("🍳 Let's cook some chicken",
+          Image.asset("assets/images/cooking.jpg")),
+      GridItemModel("🔢 Built a customizable keyboard library",
+          Image.asset("assets/images/slash_keyboard.gif")),
+      GridItemModel(
+          "💇 I like long hair", Image.asset("assets/images/hair_02.jpg")),
+      GridItemModel("🖥️ Holding a Nvidia GT 610 - my first proper GPU",
+          Image.asset("assets/images/gpu.jpg")),
+      GridItemModel("🏖️ Maybe I'm a beach person?",
+          Image.asset("assets/images/beach.jpg")),
+      GridItemModel(
+          "📱 LYT app @microfinance.ai", Image.asset("assets/images/lyt.webp")),
+      GridItemModel("🛖 A makeshift traditional hut where date sap is made",
+          Image.asset("assets/images/dates.jpg")),
+      GridItemModel("🐶 I've a Polo, tumhare paas kya hai?",
+          Image.asset("assets/images/polo.jpg")),
+      GridItemModel("🕹️ Love gaming! Gamer tag - Damercy",
+          Image.asset("assets/images/rig.jpg")),
+    ];
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _gridItems.map((gridItem) => precacheImage(gridItem.image.image, context));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: EdgeInsets.fromLTRB(
                     0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
             const CircleAvatar(
-              backgroundImage: AssetImage("assets/images/dp.jpg"),
+              backgroundImage: AssetImage("assets/images/dp_avatar.jpg"),
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             AutoSizeText(
@@ -160,7 +199,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         : MediaQuery.of(context).size.height + 800,
                     margin: EdgeInsets.fromLTRB(0,
                         (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
-                    child: BodyBottomGrid(),
+                    child: BodyBottomGrid(
+                      gridItems: _gridItems,
+                    ),
                   )),
               Center(
                   child: Padding(

@@ -4,9 +4,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class GridItem extends StatelessWidget {
-  final String imageUrl, text;
+  final String text;
+  final Image image;
 
-  const GridItem({Key? key, required this.imageUrl, required this.text})
+  const GridItem({Key? key, required this.image, required this.text})
       : super(key: key);
 
   @override
@@ -14,9 +15,7 @@ class GridItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(imageUrl)),
+        ClipRRect(borderRadius: BorderRadius.circular(8), child: image),
         const SizedBox(height: 8),
         AutoSizeText(text,
             style: Theme.of(context)
