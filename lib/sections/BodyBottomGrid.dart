@@ -12,6 +12,7 @@ class BodyBottomGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
       crossAxisSpacing: 24,
       mainAxisSpacing: 32,
       itemCount: gridItems.length,
