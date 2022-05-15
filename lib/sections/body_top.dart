@@ -1,5 +1,5 @@
-import 'package:dayaonweb/sections/IntroBodyTop.dart';
-import 'package:dayaonweb/utils/ScreenSize.dart';
+import 'package:dayaonweb/sections/intro_body_top.dart';
+import 'package:dayaonweb/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 
 class BodyTop extends StatelessWidget {

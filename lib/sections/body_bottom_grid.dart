@@ -1,6 +1,6 @@
-import 'package:dayaonweb/models/GridItemModel.dart';
-import 'package:dayaonweb/utils/ScreenSize.dart';
-import 'package:dayaonweb/widgets/GridItem.dart';
+import 'package:dayaonweb/models/grid_item_model.dart';
+import 'package:dayaonweb/utils/screen_size.dart';
+import 'package:dayaonweb/widgets/grid_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 

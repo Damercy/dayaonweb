@@ -1,14 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:dayaonweb/sections/BodyBottomGrid.dart';
-import 'package:dayaonweb/sections/BodyTop.dart';
-import 'package:dayaonweb/sections/DrawerColumn.dart';
+import 'package:dayaonweb/sections/body_bottom_grid.dart';
+import 'package:dayaonweb/sections/body_top.dart';
+import 'package:dayaonweb/sections/drawer_column.dart';
 import 'package:dayaonweb/theme/theme.dart';
-import 'package:dayaonweb/utils/ScreenSize.dart';
+import 'package:dayaonweb/utils/screen_size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'models/GridItemModel.dart';
+import 'models/grid_item_model.dart';
 
 void main() {
   runApp(const PortfolioApp());
