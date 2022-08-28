@@ -1,6 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerColumn extends StatelessWidget {
@@ -26,11 +25,9 @@ class DrawerColumn extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
-              child: AutoSizeText(
-                "Dayamoy Adhikari",
-                minFontSize: 24,
-                style: GoogleFonts.rubik(fontWeight: FontWeight.w600),
-              ),
+              child: AutoSizeText("Dayamoy Adhikari",
+                  minFontSize: 24,
+                  style: Theme.of(context).textTheme.headlineMedium),
             ),
             IconButton(
                 icon: const Icon(Icons.clear),
@@ -59,11 +56,9 @@ class DrawerColumn extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
-                    child: AutoSizeText(
-                      "Blog",
-                      minFontSize: 20,
-                      style: GoogleFonts.rubik(fontWeight: FontWeight.w400),
-                    ),
+                    child: AutoSizeText("Blog",
+                        minFontSize: 20,
+                        style: Theme.of(context).textTheme.titleMedium),
                   ),
                   IconButton(
                       icon: const Icon(Icons.launch_rounded),

@@ -18,10 +18,7 @@ class IntroBodyTop extends StatelessWidget {
         Text(
           "Android Engineer",
           textAlign: TextAlign.center,
-          style: Theme.of(context)
-              .textTheme
-              .headlineLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.displayLarge,
         ),
         const SizedBox(
           height: 32,
@@ -34,12 +31,9 @@ class IntroBodyTop extends StatelessWidget {
             children: [
               TextSpan(
                   text: "Paytm Insider",
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      height: 1.5,
-                      letterSpacing: 0.5,
-                      decorationThickness: 1.5,
-                      decoration: TextDecoration.underline),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        decoration: TextDecoration.underline,
+                      ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
                       await launch("https://www.insider.in");
@@ -47,12 +41,10 @@ class IntroBodyTop extends StatelessWidget {
               const TextSpan(text: " and previously at "),
               TextSpan(
                   text: "WedMeGood",
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      height: 1.5,
-                      letterSpacing: 0.5,
-                      decorationThickness: 1.5,
-                      decoration: TextDecoration.underline),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(decoration: TextDecoration.underline),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
                       await launch("https://www.wedmegood.com");
@@ -60,20 +52,17 @@ class IntroBodyTop extends StatelessWidget {
               const TextSpan(text: " and "),
               TextSpan(
                   text: "Microfinance.ai",
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      height: 1.5,
-                      letterSpacing: 0.5,
-                      decorationThickness: 1.5,
-                      decoration: TextDecoration.underline),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(decoration: TextDecoration.underline),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
                       await launch("https://www.microfinance.ai");
                     }),
               const TextSpan(text: ".")
             ],
-            style: Theme.of(context).textTheme.headline6?.copyWith(
-                fontWeight: FontWeight.w900, height: 1.5, letterSpacing: 0.5),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         const SizedBox(
@@ -87,12 +76,10 @@ class IntroBodyTop extends StatelessWidget {
             children: [
               TextSpan(
                   text: "\$200k",
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      height: 1.5,
-                      letterSpacing: 0.5,
-                      decorationThickness: 1.5,
-                      decoration: TextDecoration.underline),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(decoration: TextDecoration.underline),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
                       await launch(
@@ -100,8 +87,7 @@ class IntroBodyTop extends StatelessWidget {
                     }),
               const TextSpan(text: ".")
             ],
-            style: Theme.of(context).textTheme.headline6?.copyWith(
-                fontWeight: FontWeight.w900, height: 1.5, letterSpacing: 0.5),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         const SizedBox(
@@ -114,12 +100,10 @@ class IntroBodyTop extends StatelessWidget {
             children: [
               TextSpan(
                   text: "Twitter",
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      height: 1.5,
-                      letterSpacing: 0.5,
-                      decorationThickness: 1.5,
-                      decoration: TextDecoration.underline),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(decoration: TextDecoration.underline),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
                       await launch("https://twitter.com/damercysiyzarc");
@@ -127,20 +111,17 @@ class IntroBodyTop extends StatelessWidget {
               const TextSpan(text: " or "),
               TextSpan(
                   text: "LinkedIn",
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      height: 1.5,
-                      letterSpacing: 0.5,
-                      decorationThickness: 1.5,
-                      decoration: TextDecoration.underline),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(decoration: TextDecoration.underline),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () async {
                       await launch("https://in.linkedin.com/in/damercy");
                     }),
               const TextSpan(text: ".")
             ],
-            style: Theme.of(context).textTheme.headline6?.copyWith(
-                fontWeight: FontWeight.w900, height: 1.5, letterSpacing: 0.5),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         const SizedBox(

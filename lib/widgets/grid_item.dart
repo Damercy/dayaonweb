@@ -10,18 +10,28 @@ class GridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(borderRadius: BorderRadius.circular(8), child: image),
-        const SizedBox(height: 8),
-        AutoSizeText(text,
-            style: Theme.of(context)
-                .textTheme
-                .subtitle1
-                ?.merge(const TextStyle(fontWeight: FontWeight.w600))),
-        const SizedBox(height: 8),
-      ],
+    return gridCard(context);
+  }
+
+  Widget gridCard(BuildContext context) {
+    return Card(
+      elevation: 0,
+      color: Theme.of(context).colorScheme.surfaceVariant,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(borderRadius: BorderRadius.circular(8), child: image),
+          const SizedBox(height: 16),
+          Center(
+            child: AutoSizeText(
+              text,
+              style: Theme.of(context).textTheme.caption,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
+      ),
     );
   }
 }

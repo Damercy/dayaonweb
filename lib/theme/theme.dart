@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // ThemeData darkTheme = ThemeData(
 //     brightness: Brightness.dark,
@@ -23,11 +22,15 @@ import 'package:google_fonts/google_fonts.dart';
 //     drawerTheme: const DrawerThemeData(backgroundColor: Color(0xFFFFF1EE)),
 //     useMaterial3: true);
 
-ThemeData lightTheme =
-    ThemeData(colorScheme: lightColorScheme, useMaterial3: true);
+ThemeData lightTheme = ThemeData(
+    colorScheme: lightColorScheme,
+    useMaterial3: true,
+    typography: Typography.material2021());
 
-ThemeData darkTheme =
-    ThemeData(colorScheme: darkColorScheme, useMaterial3: true);
+ThemeData darkTheme = ThemeData(
+    colorScheme: darkColorScheme,
+    useMaterial3: true,
+    typography: Typography.material2021());
 
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
@@ -81,7 +84,7 @@ const darkColorScheme = ColorScheme(
   onErrorContainer: Color(0xFFFFDAD6),
   background: Color(0xFF40000F),
   onBackground: Color(0xFFFFDADB),
-  surface: Color(0xFF40000F),
+  surface: Color(0xFF4DE088),
   onSurface: Color(0xFFFFDADB),
   surfaceVariant: Color(0xFF414941),
   onSurfaceVariant: Color(0xFFC1C9BF),
