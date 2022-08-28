@@ -18,7 +18,10 @@ class IntroBodyTop extends StatelessWidget {
         Text(
           "Android Engineer",
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headline2,
+          style: Theme.of(context)
+              .textTheme
+              .headlineLarge
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           height: 32,
@@ -27,8 +30,21 @@ class IntroBodyTop extends StatelessWidget {
           textAlign: TextAlign.justify,
           text: TextSpan(
             text:
-                "👋🏻 Hi, I'm Dayamoy Adhikari and I design beautiful android experiences for people. Currently pushing builds at ",
+                "👋🏻 Hi, I'm Dayamoy Adhikari and I design beautiful, native android experiences for people. Currently pushing builds at ",
             children: [
+              TextSpan(
+                  text: "Paytm Insider",
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.w900,
+                      height: 1.5,
+                      letterSpacing: 0.5,
+                      decorationThickness: 1.5,
+                      decoration: TextDecoration.underline),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () async {
+                      await launch("https://www.insider.in");
+                    }),
+              const TextSpan(text: " and previously at "),
               TextSpan(
                   text: "WedMeGood",
                   style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -41,7 +57,7 @@ class IntroBodyTop extends StatelessWidget {
                     ..onTap = () async {
                       await launch("https://www.wedmegood.com");
                     }),
-              const TextSpan(text: " and previously at "),
+              const TextSpan(text: " and "),
               TextSpan(
                   text: "Microfinance.ai",
                   style: Theme.of(context).textTheme.headline6?.copyWith(
@@ -131,59 +147,42 @@ class IntroBodyTop extends StatelessWidget {
           height: 32,
         ),
         Align(
-          alignment: ScreenSize.isLargeScreenDevice(context)
-              ? Alignment.topLeft
-              : Alignment.center,
-          child: ElevatedButton.icon(
-              icon: const Icon(Icons.download_rounded),
-              style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(0),
-                  padding:
-                      MaterialStateProperty.all(const EdgeInsets.all(24.0)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      const RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(8.0)))),
-                  splashFactory: InkSplash.splashFactory),
-              onPressed: () async {
-                await launch(
-                    "https://drive.google.com/file/d/1ahZ4pxjXDqXIiN8gMSxFbVGV7oc3-4yi/view?usp=sharing");
-              },
-              label: Text("DOWNLOAD RESUME",
-                  style: Theme.of(context).textTheme.button?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      height: 1.5,
-                      color: Colors.white,
-                      letterSpacing: 1.0))),
-        ),
+            alignment: ScreenSize.isLargeScreenDevice(context)
+                ? Alignment.topLeft
+                : Alignment.center,
+            child: ElevatedButton.icon(
+                icon: const Icon(Icons.download_rounded),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(24.0),
+                  // Foreground color
+                  onPrimary: Theme.of(context).colorScheme.onPrimary,
+                  // Background color
+                  primary: Theme.of(context).colorScheme.primary,
+                ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
+                onPressed: () async {
+                  await launch(
+                      "https://drive.google.com/file/d/1ahZ4pxjXDqXIiN8gMSxFbVGV7oc3-4yi/view?usp=sharing");
+                },
+                label: const Text(
+                  "Download Resume",
+                ))),
         const SizedBox(
           height: 24,
         ),
         Align(
-          alignment: ScreenSize.isLargeScreenDevice(context)
-              ? Alignment.topLeft
-              : Alignment.center,
-          child: ElevatedButton.icon(
-              icon: const FaIcon(FontAwesomeIcons.github),
-              style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(0),
-                  padding:
-                      MaterialStateProperty.all(const EdgeInsets.all(24.0)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      const RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(8.0)))),
-                  splashFactory: InkSplash.splashFactory),
-              onPressed: () async {
-                await launch("https://www.github.com/Damercy");
-              },
-              label: Text("FOLLOW ON GITHUB",
-                  style: Theme.of(context).textTheme.button?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      height: 1.5,
-                      color: Colors.white,
-                      letterSpacing: 1.0))),
-        )
+            alignment: ScreenSize.isLargeScreenDevice(context)
+                ? Alignment.topLeft
+                : Alignment.center,
+            child: OutlinedButton.icon(
+                icon: const FaIcon(FontAwesomeIcons.github),
+                style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.all(24.0)),
+                onPressed: () async {
+                  await launch("https://www.github.com/Damercy");
+                },
+                label: const Text(
+                  "Follow on Github",
+                )))
       ],
     );
   }

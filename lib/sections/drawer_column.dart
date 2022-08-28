@@ -11,14 +11,12 @@ class DrawerColumn extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ClipRRect(
-              borderRadius:
-                  const BorderRadius.all(Radius.elliptical(100.0, 100.0)),
-              child: Image.asset(
-                "assets/images/dp.jpg",
-              )),
-        ),
+            padding: const EdgeInsets.all(16.0),
+            child: Image.asset(
+              "assets/images/dp.webp",
+              width: 100.0,
+              height: 100.0,
+            )),
         const SizedBox(
           height: 8,
         ),

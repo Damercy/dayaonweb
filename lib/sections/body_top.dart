@@ -26,12 +26,9 @@ class BodyTop extends StatelessWidget {
               ScreenSize.isLargeScreenDevice(context) ? 0 : 48,
               0,
               0),
-          child: ClipRRect(
-              borderRadius:
-                  const BorderRadius.all(Radius.elliptical(120.0, 120.0)),
-              child: Image.asset(
-                "assets/images/dp.jpg",
-              )),
+          child: Image.asset(
+            "assets/images/dp.webp",
+          ),
         ),
         const SizedBox(
           height: 32,

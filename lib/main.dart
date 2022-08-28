@@ -5,7 +5,6 @@ import 'package:dayaonweb/sections/drawer_column.dart';
 import 'package:dayaonweb/theme/theme.dart';
 import 'package:dayaonweb/utils/screen_size.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'models/grid_item_model.dart';
@@ -36,7 +35,6 @@ class _PortfolioAppState extends State<PortfolioApp> {
       title: 'Dayamoy Adhikari - Android engineer',
       debugShowCheckedModeBanner: false,
       theme: !_isDarkModeEnabled ? lightTheme : darkTheme,
-      darkTheme: darkTheme,
       home: MyHomePage(
         title: 'Dayamoy Adhikari',
         isDarkModeEnabled: _isDarkModeEnabled,
@@ -72,25 +70,25 @@ class _MyHomePageState extends State<MyHomePage> {
       GridItemModel("📱 Minimalist quotes app side project",
           Image.asset("assets/images/quoter.webp")),
       GridItemModel("🎣 Fishing in the past time",
-          Image.asset("assets/images/fishing_03.jpg")),
+          Image.asset("assets/images/fishing_03.webp")),
       GridItemModel("🍳 Let's cook some chicken",
-          Image.asset("assets/images/cooking.jpg")),
+          Image.asset("assets/images/cooking.webp")),
       GridItemModel("🔢 Built a customizable keyboard library",
-          Image.asset("assets/images/slash_keyboard.png")),
+          Image.asset("assets/images/slash_keyboard.webp")),
       GridItemModel(
-          "💇 I like long hair", Image.asset("assets/images/hair_02.jpg")),
+          "💇 I like long hair", Image.asset("assets/images/hair_02.webp")),
       GridItemModel("🖥️ Holding a Nvidia GT 610 - my first proper GPU",
-          Image.asset("assets/images/gpu.jpg")),
+          Image.asset("assets/images/gpu.webp")),
       GridItemModel("🏖️ Maybe I'm a beach person?",
-          Image.asset("assets/images/beach.jpg")),
+          Image.asset("assets/images/beach.webp")),
       GridItemModel(
           "📱 LYT app @microfinance.ai", Image.asset("assets/images/lyt.webp")),
       GridItemModel("🛖 A makeshift traditional hut where date sap is made",
-          Image.asset("assets/images/dates.jpg")),
+          Image.asset("assets/images/dates.webp")),
       GridItemModel("🐶 I've a Polo, tumhare paas kya hai?",
-          Image.asset("assets/images/polo.jpg")),
+          Image.asset("assets/images/polo.webp")),
       GridItemModel("🕹️ Love gaming! Gamer tag - Damercy",
-          Image.asset("assets/images/rig.jpg")),
+          Image.asset("assets/images/rig.webp")),
     ];
   }
 
@@ -117,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (BuildContext context) {
                 return IconButton(
                   splashRadius: 20.0,
-                  icon: const Icon(Icons.menu, color: Colors.white),
+                  icon: const Icon(Icons.menu),
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
                   },
@@ -129,18 +127,19 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: EdgeInsets.fromLTRB(
                     0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
-            const CircleAvatar(
-              backgroundImage: AssetImage("assets/images/dp.jpg"),
+            Image.asset(
+              "assets/images/dp.webp",
+              width: 50.0,
+              height: 50.0,
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
-            AutoSizeText(
-              widget.title,
-              style: GoogleFonts.rubik(
-                  fontWeight: FontWeight.w400, color: Colors.white),
-            )
+            AutoSizeText(widget.title,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontWeight: FontWeight.w500))
           ],
         ),
-        backgroundColor: Colors.green,
         titleSpacing: 0.0,
         elevation: 0.0,
         actions: [
@@ -205,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 24),
                 child: TextButton.icon(
-                  icon: const Icon(Icons.flutter_dash_rounded),
+                  icon: const Icon(Icons.flutter_dash),
                   style:
                       const ButtonStyle(splashFactory: InkSplash.splashFactory),
                   onPressed: () async {
