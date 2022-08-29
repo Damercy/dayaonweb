@@ -23,12 +23,14 @@ class GridItem extends StatelessWidget {
           ClipRRect(borderRadius: BorderRadius.circular(8), child: image),
           const SizedBox(height: 16),
           Center(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 8.0),
             child: AutoSizeText(
               text,
-              style: Theme.of(context).textTheme.caption,
+              style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
-          ),
+          )),
           const SizedBox(height: 16),
         ],
       ),

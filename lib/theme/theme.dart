@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// @Deprecated("Previously used M2 theme colors for darkTheme & lightTheme")
 // ThemeData darkTheme = ThemeData(
 //     brightness: Brightness.dark,
 //     textTheme: Typography().white.apply(

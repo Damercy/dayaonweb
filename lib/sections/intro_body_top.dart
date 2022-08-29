@@ -15,11 +15,12 @@ class IntroBodyTop extends StatelessWidget {
           ? MainAxisAlignment.center
           : MainAxisAlignment.start,
       children: [
-        Text(
-          "Android Engineer",
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
+        Text("Android Engineer",
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .displayLarge
+                ?.copyWith(fontWeight: FontWeight.bold)),
         const SizedBox(
           height: 32,
         ),
@@ -49,7 +50,7 @@ class IntroBodyTop extends StatelessWidget {
                     ..onTap = () async {
                       await launch("https://www.wedmegood.com");
                     }),
-              const TextSpan(text: " and "),
+              const TextSpan(text: " & "),
               TextSpan(
                   text: "Microfinance.ai",
                   style: Theme.of(context)
@@ -134,7 +135,8 @@ class IntroBodyTop extends StatelessWidget {
             child: ElevatedButton.icon(
                 icon: const Icon(Icons.download_rounded),
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 48.0, vertical: 24.0),
                   // Foreground color
                   onPrimary: Theme.of(context).colorScheme.onPrimary,
                   // Background color
@@ -157,7 +159,8 @@ class IntroBodyTop extends StatelessWidget {
             child: OutlinedButton.icon(
                 icon: const FaIcon(FontAwesomeIcons.github),
                 style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.all(24.0)),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 48.0, vertical: 24.0)),
                 onPressed: () async {
                   await launch("https://www.github.com/Damercy");
                 },

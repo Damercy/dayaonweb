@@ -129,8 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
             Image.asset(
               "assets/images/dp.webp",
-              width: 50.0,
-              height: 50.0,
+              width: 32.0,
+              height: 32.0,
             ),
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             AutoSizeText(widget.title,
@@ -169,11 +169,11 @@ class _MyHomePageState extends State<MyHomePage> {
               Padding(
                 padding: EdgeInsets.fromLTRB(
                     !ScreenSize.isLargeScreenDevice(context)
-                        ? 8
+                        ? 32
                         : ScreenSize.determineWidth(context),
                     0,
                     !ScreenSize.isLargeScreenDevice(context)
-                        ? 8
+                        ? 32
                         : ScreenSize.determineWidth(context),
                     0),
                 child: const BodyTop(
@@ -202,22 +202,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
               Center(
                   child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 24),
-                child: TextButton.icon(
-                  icon: const Icon(Icons.flutter_dash),
-                  style:
-                      const ButtonStyle(splashFactory: InkSplash.splashFactory),
-                  onPressed: () async {
-                    await launch("https://github.com/Damercy/dayaonweb");
-                  },
-                  label: Text("MADE WITH FLUTTER",
-                      style: Theme.of(context).textTheme.button?.copyWith(
-                          fontWeight: FontWeight.w500,
-                          color: Colors.green,
-                          height: 1.5,
-                          letterSpacing: 1.0)),
-                ),
-              )),
+                      padding: const EdgeInsets.symmetric(vertical: 32),
+                      child: TextButton.icon(
+                          icon: const Icon(Icons.flutter_dash),
+                          style: OutlinedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 48.0, vertical: 24.0),
+                              splashFactory: InkSplash.splashFactory),
+                          onPressed: () async {
+                            await launch(
+                                "https://github.com/Damercy/dayaonweb");
+                          },
+                          label: const Text(
+                            "Made with Flutter",
+                          )))),
             ],
           ),
         ),
