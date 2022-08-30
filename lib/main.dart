@@ -193,7 +193,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Container(
                     height: ScreenSize.isLargeScreenDevice(context)
                         ? MediaQuery.of(context).size.height + 1200
-                        : MediaQuery.of(context).size.height + 950,
+                        : MediaQuery.of(context).size.height + 1200,
                     margin: EdgeInsets.fromLTRB(0,
                         (MediaQuery.of(context).size.height - 350) / 3, 0, 0),
                     child: BodyBottomGrid(
@@ -202,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
               Center(
                   child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 32),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       child: TextButton.icon(
                           icon: const Icon(Icons.flutter_dash),
                           style: OutlinedButton.styleFrom(
