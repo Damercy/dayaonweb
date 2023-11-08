@@ -11,11 +11,15 @@ class DrawerColumn extends StatelessWidget {
       children: [
         Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Image.asset(
+            child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+
+              child: Image.asset(
               "assets/images/dp.webp",
-              width: 100.0,
-              height: 100.0,
-            )),
+              width: 128.0,
+              height: 128.0,
+            ),
+            ) ),
         const SizedBox(
           height: 8,
         ),
@@ -30,7 +34,7 @@ class DrawerColumn extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineMedium),
             ),
             IconButton(
-                icon: const Icon(Icons.clear),
+                icon: Icon(Icons.clear, color: Theme.of(context).colorScheme.onTertiaryContainer),
                 splashRadius: 20.0,
                 onPressed: () {
                   Navigator.pop(context);
@@ -61,7 +65,7 @@ class DrawerColumn extends StatelessWidget {
                         style: Theme.of(context).textTheme.titleMedium),
                   ),
                   IconButton(
-                      icon: const Icon(Icons.launch_rounded),
+                    icon: Icon(Icons.launch_rounded,color: Theme.of(context).colorScheme.onTertiaryContainer,),
                       iconSize: 20,
                       splashRadius: 0.1,
                       // Negligible splash for no ripple effect

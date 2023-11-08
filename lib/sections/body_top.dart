@@ -26,8 +26,12 @@ class BodyTop extends StatelessWidget {
               ScreenSize.isLargeScreenDevice(context) ? 0 : 48,
               0,
               0),
-          child: Image.asset(
+          child: ClipOval(
+            child: Image.asset(
             "assets/images/dp.webp",
+            width:  ScreenSize.isLargeScreenDevice(context)? 300.0 : 256.0 ,
+            height: ScreenSize.isLargeScreenDevice(context)? 300.0 : 256.0 ,
+          ),
           ),
         ),
         const SizedBox(

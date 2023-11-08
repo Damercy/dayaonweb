@@ -52,7 +52,7 @@ class IntroBodyTop extends StatelessWidget {
                     }),
               const TextSpan(text: " & "),
               TextSpan(
-                  text: "Microfinance.ai",
+                  text: "Vitto",
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge
@@ -73,7 +73,7 @@ class IntroBodyTop extends StatelessWidget {
           textAlign: TextAlign.justify,
           text: TextSpan(
             text:
-                "I've been part of the core team at Microfinance.ai where I ideated, designed & developed the app that helped raise pre-seed amount of ",
+                "I've been part of the core team at Vitto (previously microfinance.ai) where I ideated, designed & developed the app that helped raise pre-seed amount of ",
             children: [
               TextSpan(
                   text: "\$200k",
@@ -132,23 +132,24 @@ class IntroBodyTop extends StatelessWidget {
             alignment: ScreenSize.isLargeScreenDevice(context)
                 ? Alignment.topLeft
                 : Alignment.center,
-            child: ElevatedButton.icon(
-                icon: const Icon(Icons.download_rounded),
-                style: ElevatedButton.styleFrom(
+            child: FilledButton.tonalIcon(
+                icon: const Icon(Icons.remove_red_eye),
+                style: FilledButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 48.0, vertical: 24.0),
                   // Foreground color
-                  onPrimary: Theme.of(context).colorScheme.onPrimary,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
                   // Background color
-                  primary: Theme.of(context).colorScheme.primary,
+                  backgroundColor: Theme.of(context).colorScheme.primary,
                 ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
                 onPressed: () async {
                   await launch(
-                      "https://drive.google.com/file/d/1ahZ4pxjXDqXIiN8gMSxFbVGV7oc3-4yi/view?usp=sharing");
+                      "https://drive.google.com/file/d/1_axh8eadq3dpwBqAF6gGxPAyVmyLaVxu/view?usp=sharing");
                 },
                 label: const Text(
-                  "Download Resume",
-                ))),
+                  "Resume",
+                )
+            )),
         const SizedBox(
           height: 24,
         ),
@@ -165,7 +166,7 @@ class IntroBodyTop extends StatelessWidget {
                   await launch("https://www.github.com/Damercy");
                 },
                 label: const Text(
-                  "Follow on Github",
+                  "Github",
                 )))
       ],
     );

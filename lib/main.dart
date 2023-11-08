@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (BuildContext context) {
                 return IconButton(
                   splashRadius: 20.0,
-                  icon: const Icon(Icons.menu),
+                  icon: Icon(Icons.menu, color: Theme.of(context).colorScheme.onTertiaryContainer,),
                   onPressed: () {
                     Scaffold.of(context).openDrawer();
                   },
@@ -127,11 +127,15 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
                 padding: EdgeInsets.fromLTRB(
                     0, 0, ScreenSize.isLargeScreenDevice(context) ? 16 : 0, 0)),
-            Image.asset(
+                    ClipRRect(
+                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                      child:  Image.asset(
               "assets/images/dp.webp",
               width: 32.0,
               height: 32.0,
             ),
+          ),
+          
             const Padding(padding: EdgeInsets.fromLTRB(0, 0, 16, 0)),
             AutoSizeText(widget.title,
                 style: Theme.of(context)
@@ -148,6 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: widget.themeChangeCb,
             icon: Icon(
                 widget.isDarkModeEnabled ? Icons.light_mode : Icons.dark_mode),
+                color: Theme.of(context).colorScheme.onTertiaryContainer,
           ),
           SizedBox(
             width: ScreenSize.determineWidth(context),

@@ -1,37 +1,20 @@
 import 'package:flutter/material.dart';
 
-// @Deprecated("Previously used M2 theme colors for darkTheme & lightTheme")
-// ThemeData darkTheme = ThemeData(
-//     brightness: Brightness.dark,
-//     textTheme: Typography().white.apply(
-//         fontFamily: GoogleFonts.rubik().fontFamily, displayColor: Colors.white),
-//     primaryColor: const Color(0xFF48DC84),
-//     scaffoldBackgroundColor: const Color(0xFF201A19),
-//     splashFactory: InkRipple.splashFactory,
-//     drawerTheme: const DrawerThemeData(backgroundColor: Color(0xFF201A19)),
-//     useMaterial3: true);
-
-// ThemeData lightTheme = ThemeData(
-//     brightness: Brightness.light,
-//     primaryColor: const Color(0xFF48DC84),
-//     textTheme: Typography().black.apply(
-//         fontFamily: GoogleFonts.rubik().fontFamily,
-//         bodyColor: const Color(0xFF442C2E),
-//         displayColor: const Color(0xFF442C2E)),
-//     scaffoldBackgroundColor: const Color(0xFFFFF1EE),
-//     splashFactory: InkRipple.splashFactory,
-//     drawerTheme: const DrawerThemeData(backgroundColor: Color(0xFFFFF1EE)),
-//     useMaterial3: true);
-
 ThemeData lightTheme = ThemeData(
     colorScheme: lightColorScheme,
     useMaterial3: true,
-    typography: Typography.material2021());
+    typography: Typography.material2021(),
+    drawerTheme:const  DrawerThemeData(
+      backgroundColor: Color(0xFFFFFFFF) 
+    ));
 
 ThemeData darkTheme = ThemeData(
     colorScheme: darkColorScheme,
     useMaterial3: true,
-    typography: Typography.material2021());
+    typography: Typography.material2021(),
+    drawerTheme:const  DrawerThemeData(
+      backgroundColor: Color(0xFF303030) 
+    ));
 
 const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
@@ -45,7 +28,7 @@ const lightColorScheme = ColorScheme(
   onSecondaryContainer: Color(0xFF00210D),
   tertiary: Color(0xFF3A646F),
   onTertiary: Color(0xFFFFFFFF),
-  tertiaryContainer: Color(0xFFBEEAF6),
+  tertiaryContainer: Color(0x00000000),
   onTertiaryContainer: Color(0xFF001F26),
   error: Color(0xFFBA1A1A),
   errorContainer: Color(0xFFFFDAD6),
@@ -78,12 +61,12 @@ const darkColorScheme = ColorScheme(
   tertiary: Color(0xFFA2CED9),
   onTertiary: Color(0xFF01363F),
   tertiaryContainer: Color(0xFF204D56),
-  onTertiaryContainer: Color(0xFFBEEAF6),
+  onTertiaryContainer: Color(0xFFFFFFFF),
   error: Color(0xFFFFB4AB),
   errorContainer: Color(0xFF93000A),
   onError: Color(0xFF690005),
   onErrorContainer: Color(0xFFFFDAD6),
-  background: Color(0xFF40000F),
+  background: Color(0xFF303030),
   onBackground: Color(0xFFFFDADB),
   surface: Color(0xFF4DE088),
   onSurface: Color(0xFFFFDADB),
